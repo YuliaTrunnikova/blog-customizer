@@ -1,24 +1,22 @@
-import React, { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { ArrowButton, OnClick } from './ArrowButton';
+
+import { ArrowButton } from './ArrowButton';
 
 const meta: Meta<typeof ArrowButton> = {
 	component: ArrowButton,
 };
-export default meta;
 
+export default meta;
 type Story = StoryObj<typeof ArrowButton>;
 
-export const ArrowButtonStory: Story = () => {
-	const [isOpen, setIsOpen] = useState<boolean>(false);
-
-	const toggleOpen: OnClick = () => {
-		setIsOpen((prevIsOpen) => !prevIsOpen);
-	};
-
+const ArrowButtonWithState = () => {
 	return (
 		<>
-			<ArrowButton toggleOpen={toggleOpen} openState={isOpen} />
+			<ArrowButton openState={true} toggleOpen={() => console.log('')} />
 		</>
 	);
+};
+
+export const ArrowButtonStory: Story = {
+	render: () => <ArrowButtonWithState />,
 };
