@@ -9,12 +9,14 @@ const meta: Meta<typeof ArrowButton> = {
 export default meta;
 type Story = StoryObj<typeof ArrowButton>;
 
+const ArrowButtonWithState = () => {
+	return (
+		<>
+			<ArrowButton openState={true} toggleOpen={() => console.log('')} />
+		</>
+	);
+};
+
 export const ArrowButtonStory: Story = {
-	render: () => {
-		return (
-			<>
-				<ArrowButton />
-			</>
-		);
-	},
+	render: () => <ArrowButtonWithState />,
 };
