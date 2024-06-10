@@ -69,7 +69,7 @@ export const ArticleParamsForm = ({ setPageState }: PropsArticleParamsForm) => {
 						})}
 						ref={rootRef}>
 						<form className={styles.form} onSubmit={submitForm}>
-							<Text as='h1' size={31} weight={800} uppercase dynamicLite>
+							<Text as='h1' size={31} weight={800} uppercase>
 								Задайте параметры
 							</Text>
 							<Select
